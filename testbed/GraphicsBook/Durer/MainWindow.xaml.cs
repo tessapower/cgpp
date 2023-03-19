@@ -3,6 +3,11 @@ using System.Windows;
 using System.Windows.Input;
 using System.Diagnostics;
 
+// Exercise 3.2: The dots at the corners of the rendered cube in Figure 3.8
+// appear behind the edges, which doesn't look natural; alter the program to
+// draw the dots after the segments so that it looks better. Alter it again to
+// not draw the dots at all, and only draw the segments.
+
 namespace GraphicsBook {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -18,6 +23,7 @@ namespace GraphicsBook {
             // Now add some graphical items in the main Canvas,
             // whose name is "GraphPaper"
             gp = this.FindName("Paper") as GraphPaper;
+
             // Build a table of vertices:
             const int nPoints = 8;
             const int nEdges = 12;
