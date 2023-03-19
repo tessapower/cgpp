@@ -68,6 +68,12 @@ namespace GraphicsBook {
                 gp.Children.Add(new Segment(pictureVertices[n1], pictureVertices[n2]));
             }
 
+            // Draw point for each vertex in pictureVertices
+            // Comment this out to draw only the segments
+            foreach (var p in pictureVertices) {
+                gp.Children.Add(new Dot(p.X, p.Y));
+            }
+
             ready = true; // Now we're ready to have sliders and buttons influence the display.
         }
 
