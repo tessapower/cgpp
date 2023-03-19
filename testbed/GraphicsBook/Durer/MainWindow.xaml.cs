@@ -49,7 +49,7 @@ namespace GraphicsBook {
             const double ymax =  0.5;
 
             Point [] pictureVertices = new Point[nPoints];
-            double scale = 100;
+            const double scale = 100.0;
             for (int i = 0; i < nPoints; i++) {
                 double x = vtable[i, 0];
                 double y = vtable[i, 1];
