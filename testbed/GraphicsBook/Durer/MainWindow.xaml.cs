@@ -51,23 +51,20 @@ namespace GraphicsBook {
             Point [] pictureVertices = new Point[nPoints];
             const double scale = 100.0;
             for (int i = 0; i < nPoints; i++) {
-                double x = vtable[i, 0];
-                double y = vtable[i, 1];
-                double z = vtable[i, 2];
+                var x = vtable[i, 0];
+                var y = vtable[i, 1];
+                var z = vtable[i, 2];
 
-                double xprime = x / z;
-                double yprime = y / z;
-                pictureVertices[i].X = 
-                    scale * (1-(xprime - xmin) / (xmax - xmin));
-                pictureVertices[i].Y = 
-                    scale * (yprime - ymin) / (ymax - ymin);
-                gp.Children
-                    .Add(new Dot(pictureVertices[i].X, pictureVertices[i].Y));
+                var xprime = x / z;
+                var yprime = y / z;
+
+                pictureVertices[i].X = scale * (1-(xprime - xmin) / (xmax - xmin)); // x / z
+                pictureVertices[i].Y = scale * (yprime - ymin) / (ymax - ymin);     // y / z
             }
-            
-            for (int i = 0; i < nEdges; i++) {
-                int n1 = etable[i, 0];
-                int n2 = etable[i, 1];
+
+            for (var i = 0; i < nEdges; i++) {
+                var n1 = etable[i, 0];
+                var n2 = etable[i, 1];
                 gp.Children.Add(new Segment(pictureVertices[n1], pictureVertices[n2]));
             }
 
